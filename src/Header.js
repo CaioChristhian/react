@@ -1,0 +1,8 @@
+export default function Header({ props }) {
+  return (
+    <>
+      <h1>{props.title}</h1>
+      {props.children} {/* recebe tudo que colocar dentro da tag/componente */}
+    </>
+  )
+}
