@@ -3,37 +3,32 @@ import React from 'react';
 import Post from './Post';
 import Header from './Header';
 
+const posts = [
+  { title: 'Title#01', subtitle: 'Sub#01', likes: 20 },
+  { title: 'Title#02', subtitle: 'Sub#02', likes: 10 },
+  { title: 'Title#03', subtitle: 'Sub#03', likes: 50 },
+  { title: 'Title#04', subtitle: 'Sub#04', likes: 100 },
+];
+
 function App() {
   return (
     <>
-    
       <Header title="Kuroishi's">
       <h2>Posts da semana</h2>
       </Header>
 
       <hr />
 
-      <Post 
-        likes={20}
-        post={{
-          title: 'Title 01',
-          subtitle: 'Subtitle 01'
-        }}
-      />
-      <Post 
-        likes={10}
-        post={{
-          title: 'Title 02',
-          subtitle: 'Subtitle 02'
-        }}
-      />
-      <Post 
-        likes={50}
-        post={{
-          title: 'Title 03',
-          subtitle: 'Subtitle 03'
-        }}
-      />
+      {posts.map(post => (
+        <Post
+          key={post.title} 
+          likes={post.likes}
+          post={{
+            title: post.title,
+            subtitle: post.subtitle,
+          }}
+        />
+      ))}
     </>
   )
 };
