@@ -13,17 +13,22 @@ function App() {
   ])
 
   function handleRefresh() {
-    setTimeout(() => {
-      setPosts((prevState) => [
-        ...prevState, // o react so acessa o valor quando o react fo executar a função
-        {
-          id: Math.random(),
-          title: `Title#0${prevState.length + 1}`, 
-          subtitle: `Sub#0${prevState.length + 1}`, 
-          likes: 50
-        }
-      ])
-    }, 2000)
+    setPosts((prevState) => [
+      ...prevState, // o react so acessa o valor quando o react for executar a função
+      {
+        id: Math.random(),
+        title: `Title#0${prevState.length + 1}`, 
+        subtitle: `Sub#0${prevState.length + 1}`, 
+        likes: 50
+      }
+    ])
+  }
+
+  
+  function handleRemovePost(postId) {
+    setPosts((prevState) => (
+      prevState.filter(post => post.id !== postId)
+    ))
   }
 
   return (
@@ -41,9 +46,11 @@ function App() {
 
       {posts.map(post => (
         <Post
+          onRemove={handleRemovePost}
           key={post.id} 
           likes={post.likes}
           post={{
+            id: post.id,
             title: post.title,
             subtitle: post.subtitle,
           }}
