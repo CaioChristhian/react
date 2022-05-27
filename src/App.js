@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import styles from './App.scss';
+
 import Post from './Post';
 import Header from './Header';
 import { ThemeProvider } from './ThemeContext'
@@ -33,7 +35,7 @@ function App() {
   return (
     <ThemeProvider>
       <Header title="Kuroishi's">
-        <h2>
+        <h2 className={styles.title}>
           Posts da semana
           <button onClick={handleRefresh}>
             Atualizar
