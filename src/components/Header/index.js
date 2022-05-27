@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 
 import styles from './Header.scss';
 
-import { ThemeContext } from "./ThemeContext";
-import Button from "./Button";
+import { ThemeContext } from "../../context/ThemeContext";
+import Button from "../Button";
 
 
 export default function Header(props) {
