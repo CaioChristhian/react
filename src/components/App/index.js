@@ -6,6 +6,8 @@ import Post from '../Post';
 import Header from '../Header';
 import { ThemeProvider } from '../../context/ThemeContext';
 
+import { Title } from './styles';
+
 function App() {
   const [posts, setPosts] = useState([
     { id: Math.random(), title: 'Title#01', subtitle: 'Sub#01', likes: 20, read: false, removed: false, },
@@ -39,12 +41,12 @@ function App() {
   return (
     <ThemeProvider>
       <Header title="Kuroishi's">
-        <h2 className={styles.title}>
+        <Title as="h2">
           Posts da semana
           <button onClick={handleRefresh}>
             Atualizar
           </button>
-        </h2>
+        </Title>
       </Header>
 
       <hr />
