@@ -24,10 +24,7 @@ function App() {
     >
       <ThemeProvider theme={currentTheme}>
         <GlobalStyle />
-        <Layout 
-          selectedTheme={theme} 
-          onToggleTheme={handleToggleTheme} 
-        />
+        <Layout />
       </ThemeProvider>
     </ThemeContext.Provider>
   );
